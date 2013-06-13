@@ -11,7 +11,8 @@
 # as per the Response Evaluation Criteria in Solid Tumors (RECIST) criteria [1]. 
 # Let t be the time expressed in months at the tumor evaluation. 
 # Assuming the tumor growth follows an exponential law, 
-# Vt the tumor volume at time t is equal to Vt=V0 exp(TG.t), where V0 is volume at baseline, and TG is the growth rate. 
+# Vt the tumor volume at time t is equal to Vt=V0 exp(TG.t), 
+# where V0 is volume at baseline, and TG is the growth rate. 
 # We approximated the tumor volume (V) by V = 4 π R3 / 3, where R, the radius of the sphere is equal to D/2. 
 # Consecutively, TG is equal to TG=3 Log(Dt/D0)/t. 
 # To report the tumor growth rate (TGR) results in a clinically meaningful way, 
@@ -21,6 +22,24 @@
 # We calculated the TGR across clinically relevant treatment periods (Figure 1): 
 # (i) TGR REFERENCE assessed during the wash-out period (off-therapy) before the introduction of the experimental drug, 
 #(ii) TGR EXPERIMENTAL assessed during the first cycle of treatment (i.e.: between the drug introduction and the first evaluation, on-therapy),
+
+########################################################################
+#  Notable references about TGR:
+########################################################################
+# 1: A simulation model of the natural history of human breast cancer. 
+# Koscielny S, Tubiana M, Valleron AJ. 
+# Br J Cancer. 1985 Oct;52(4):515-24. PubMed PMID: 4063132; PubMed Central PMCID: PMC1977243.
+
+# 2: Tumour growth rates and RECIST criteria in early drug development. Gomez-Roca C, Koscielny S, Ribrag V, Dromain C, Marzouk I, Bidault F, Bahleda R, Ferté C, Massard C, Soria JC. 
+# Eur J Cancer. 2011 Nov;47(17):2512-6. doi:10.1016/j.ejca.2011.06.012. Epub 2011 Jul 15. PubMed PMID: 21763126.
+#
+# 3: Tumor Growth Rate (TGR) provides useful information to evaluate Sorafenib and Everolimus treatment in metastatic renal cell carcinoma (mRCC) patients. An integrated analysis of the TARGET and RECORD phase III trials data.
+# Ferté C, Koscielny S, Albiges L, Rocher L, Soria JC, Iacovelli R, Loriot Y, Fizazi K, Escudier B.
+# submitted for publication
+#
+# 4: Tumor Growth Rate (TGR) provides useful information for patients enrolled in phase I trials 
+# and yields clear specific drug profiles.
+# Ferté C, et al (manuscript in preparation)
 
 ########################################################################
 # load the data
