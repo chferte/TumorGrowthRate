@@ -32,14 +32,17 @@
 
 # 2: Tumour growth rates and RECIST criteria in early drug development. Gomez-Roca C, Koscielny S, Ribrag V, Dromain C, Marzouk I, Bidault F, Bahleda R, Ferté C, Massard C, Soria JC. 
 # Eur J Cancer. 2011 Nov;47(17):2512-6. doi:10.1016/j.ejca.2011.06.012. Epub 2011 Jul 15. PubMed PMID: 21763126.
-#
+
 # 3: Tumor Growth Rate (TGR) provides useful information to evaluate Sorafenib and Everolimus treatment in metastatic renal cell carcinoma (mRCC) patients. An integrated analysis of the TARGET and RECORD phase III trials data.
 # Ferté C, Koscielny S, Albiges L, Rocher L, Soria JC, Iacovelli R, Loriot Y, Fizazi K, Escudier B.
+# presented as Posted Discussion, GU Session, ASCO annual meeting 2012 
 # submitted for publication
-#
+
 # 4: Tumor Growth Rate (TGR) provides useful information for patients enrolled in phase I trials 
 # and yields clear specific drug profiles.
 # Ferté C, et al (manuscript in preparation)
+# presented as Posted Discussion, Developmental Therapeutics Session, ASCO annual meeting 2012 
+
 
 ########################################################################
 # load the data
@@ -60,6 +63,7 @@ S1 <- S1[!is.na(S1$Date_Of_C1D1),]
 table(is.na(S1$RECIST_BASELINE))
 S1 <- S1[!is.na(S1$RECIST_BASELINE),]
 
+S1 <- 
 ########################################################################
 #  Compute the tumor Growth Rates TGR.ref and TGR.exp (TGR ref and TGR exp the first cycle, respectively)
 ########################################################################
