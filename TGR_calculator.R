@@ -14,7 +14,8 @@
 # Vt the tumor volume at time t is equal to Vt=V0 exp(TG.t), 
 # where V0 is volume at baseline, and TG is the growth rate. 
 # We approximated the tumor volume (V) by V = 4 π R3 / 3, where R, the radius of the sphere is equal to D/2. 
-# Consecutively, TG is equal to TG=3 Log(Dt/D0)/t. 
+# Consecutively, TG is equal to TG=3 Log(Dt/D0)/t, where D0 and Dt are the diameters (RECIST sums) at baseline and t, respectively.
+
 # To report the tumor growth rate (TGR) results in a clinically meaningful way, 
 # we expressed TGR as a percent increase in tumor volume during one month using the following transformation: 
 # TGR = 100 (exp(TG) -1), where exp(TG) represents the exponential of TG.
