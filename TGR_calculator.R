@@ -1,8 +1,8 @@
-## Charles Ferté, MD PhD candidate
+## Charles Ferté
 ## Institut Gustave Roussy, Villejuif, France
 ## Asessment of Tumor Growth Rates TGR) in the clinical setting
-## Performed under the supervision of Serge Koscielny, PhD & Jean-Charles Soria, MD PhD
-
+## Performed under the supervision of Serge Koscielny, Bernard Escudier and Jean-Charles Soria
+## with the help of Antoine Hollebecque, Mariana Fernandez and Brian Bot
 
 ########################################################################
 # definition of TGR
