@@ -48,33 +48,40 @@
 # load the data
 #########################################################################################################################
 
-# for this example, we point to this file  in Synapse
-# just create a synapse account online (it's free  and super useful !)
-# a full doc is available there: 
-# then install the R client
-# 
-# myFileURL <- load"https://raw.github.com/chferte/TumorGrowthRate/master/TGR_example.txt"
-
-# but you are invited to use your own .txt file (MyDataset.txt)
+# you are invited to use your own file (MyDataset.txt)
 # requirement is a table excel spreadsheet converted into a tabe delimited .txt file
 # must contain the follwoing columns names: "RECIST_BASELINE","RECIST_BEFORE","RECIST_EVAL1","SCANDATE_BASELINE","SCANDATE_BEFORE","SCANDATE_EVAL1"
 # with numeric values for the following columns: "RECIST_BASELINE" "RECIST_BEFORE" "RECIST_EVAL1"
 # with dates entered as mm/dd/yyyy for the following columns: "SCANDATE_BASELINE" "SCANDATE_BEFORE" "SCANDATE_EVAL1"  
 
-S1 <- read.table(file=myFileURL)
-S1 <- read.table("/Users/chferte/Documents/TRAVAUX/TGR_SITEP/TumorGrowthRate/TGR_example.txt")
+
+# # for clarity purposes, as example, we point to an example of such .txt file 
+# # this file is available through Synapse 
+# # You'll love it: it's super useful and free !
+# # just create a synapse account online
+# # then, install the R client package with the two command lines:
+# source("http://depot.sagebase.org/CRAN.R")
+# pkgInstall("synapseClient")
+# # then run the following lines to get the example.txt file
+# library(synapseClient)
+# synapseLogin(username="insert here your login",password="insert here your password")
+# myFile <- synGet("syn1936427")
+# myFile <- myFile@filePath
+
+
+myData <- read.table(file=myFile)
 
 ##########################################################################################################
 #  Compute the tumor Growth Rates TGR.ref and TGR.exp (TGR ref and TGR exp the first cycle, respectively)
 ##########################################################################################################
 
 # first define the reference period and the experimental period (in months)
-S1$ref.period <- as.numeric(difftime(S1$SCANDATE_BASELINE,S1$SCANDATE_BEFORE))*12/365.25
-S1$exp.period <- as.numeric(difftime(S1$SCANDATE_EVAL1,S1$SCANDATE_BASELINE))*12/365.25
+myData$ref.period <- as.numeric(difftime(myData$SCANDATE_BASELINE,myData$SCANDATE_BEFORE))*12/365.25
+myData$exp.period <- as.numeric(difftime(myData$SCANDATE_EVAL1,myData$SCANDATE_BASELINE))*12/365.25
 
 # compute the TGR 
-S1$TGR.ref <- 100*(exp(3*log(S1$RECIST_BASELINE/S1$RECIST_BEFORE)/(S1$ref.period))-1)
-S1$TGR.exp <- 100*(exp(3*log(S1$RECIST_EVAL1/S1$RECIST_BASELINE)/(S1$exp.period))-1)
+myData$TGR.ref <- 100*(exp(3*log(myData$RECIST_BASELINE/myData$RECIST_BEFORE)/(myData$ref.period))-1)
+myData$TGR.exp <- 100*(exp(3*log(myData$RECIST_EVAL1/myData$RECIST_BASELINE)/(myData$exp.period))-1)
 
 ############################################################################################################
 # compaire the TGR ref and the TGR exp (Pairwise comparison by wilcoxon ranked signed test)
@@ -82,24 +89,24 @@ S1$TGR.exp <- 100*(exp(3*log(S1$RECIST_EVAL1/S1$RECIST_BASELINE)/(S1$exp.period)
 ############################################################################################################
 
 # basic descriptive statistics
-summary(S1$TGR.ref)
-summary(S1$TGR.exp)
+summary(myData$TGR.ref)
+summary(myData$TGR.exp)
 
 # comparison of the two periods
-wilcox.test(S1$TGR.ref,S1$TGR.exp,paired=TRUE)
+wilcox.test(myData$TGR.ref,myData$TGR.exp,paired=TRUE)
 
 ##########################################################################
 # plot the TGR ref and the TGR exp 
 ##########################################################################
 par(mfrow=c(1,1))
-plot(S1$TGR.ref,S1$TGR.exp,xlim=c(-200,200),ylim=c(-200,200),pch=20,cex=.9,col="gray60",
+plot(myData$TGR.ref,myData$TGR.exp,xlim=c(-200,200),ylim=c(-200,200),pch=20,cex=.9,col="gray60",
      axes=FALSE, xlab= "TGR Reference", ylab="TGR Experimental",cex.lab=.8)
 axis(1,las=1,at=c(-200,-100,0,100,200),lab=c("-200 %","-100 %","0 %","100 %","200 %"),cex.axis=.7, font=2)
 axis(2,las=1,at=c(-200,-100,0,100,200),lab=c("-200 %","-100 %","0 %","100 %","200 %"),cex.axis=.7, font=2)
 abline(h=0,v=0)
 abline(coef=as.vector(c(0,1)), col="orange", lty=2,lwd=2.5)
 text(x=-130, y=-180,labels=paste("Pairwise comparison:\np value =",
-    format(wilcox.test(S1$TGR.ref,S1$TGR.exp,paired=TRUE)$p.value,digits=3)),adj=0,cex=.8)
+    format(wilcox.test(myData$TGR.ref,myData$TGR.exp,paired=TRUE)$p.value,digits=3)),adj=0,cex=.8)
 text(-200,-100,"orange line set for: \nTGR ref = TGR exp",col="orange", cex=.55, font=4,adj=0)
 text(x=130,y=-105,'DECREASE in TGR\n "Antitumor activity"',cex=.9,font=4,col="darkgreen")
 text(x=-90,y=100,'INCREASE in TGR\n "No antitumor activity"',cex=.9,font=4,col="red")
