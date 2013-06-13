@@ -2,7 +2,7 @@
 ## Institut Gustave Roussy, Villejuif, France
 ## Asessment of Tumor Growth Rates TGR) in the clinical setting
 ## Performed under the supervision of Serge Koscielny, Bernard Escudier and Jean-Charles Soria
-## with the help of Antoine Hollebecque, Mariana Fernandez and Brian Bot
+## With the help of Antoine Hollebecque, Mariana Fernandez and Brian Bot
 
 ########################################################################
 # definition of TGR
@@ -44,11 +44,17 @@
 # presented as Posted Discussion, Developmental Therapeutics Session, ASCO Annual meeting 2013 
 
 
-########################################################################
+#########################################################################################################################
 # load the data
+#########################################################################################################################
+# requirement is a table excel spreadsheet converted into a tabe delimited .txt file
+# with numeric values for the following columns: "RECIST_BASELINE" "RECIST_BEFORE" "RECIST_EVAL1"
+# and with dayes entered as mm/dd/yyyy for the following columns: "SCANDATE_BASELINE" "SCANDATE_BEFORE" "SCANDATE_EVAL1"  
+
 ########################################################################
-myFile <- "/Volumes/Macintosh HD/Users/chferte/Documents/TRAVAUX/TGR_SITEP/TumorGrowthRate/TGR_example.txt"
-S1 <- read.table(file=myFile)
+myFileURL <- "https://raw.github.com/chferte/TumorGrowthRate/master/TGR_example.txt"
+S1 <- read.table(file=myFileURL)
+S1 <- read.table("/Users/chferte/Documents/TRAVAUX/TGR_SITEP/TumorGrowthRate/TGR_example.txt")
 
 ########################################################################
 #  Compute the tumor Growth Rates TGR.ref and TGR.exp (TGR ref and TGR exp the first cycle, respectively)
@@ -85,6 +91,6 @@ text(x=-130, y=-180,labels=paste("Pairwise comparison:\np value =",
 text(-200,-100,"orange line set for: \nTGR ref = TGR exp",col="orange", cex=.55, font=4,adj=0)
 text(x=130,y=-105,'DECREASE in TGR\n "Antitumor activity"',cex=.9,font=4,col="darkgreen")
 text(x=-90,y=100,'INCREASE in TGR\n "No antitumor activity"',cex=.9,font=4,col="red")
-
+title("Variation of TGR across reference and experimental periods", font=2)
 
 
