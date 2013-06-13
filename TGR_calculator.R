@@ -35,13 +35,13 @@
 
 # 3: Tumor Growth Rate (TGR) provides useful information to evaluate Sorafenib and Everolimus treatment in metastatic renal cell carcinoma (mRCC) patients. An integrated analysis of the TARGET and RECORD phase III trials data.
 # Ferté C, Koscielny S, Albiges L, Rocher L, Soria JC, Iacovelli R, Loriot Y, Fizazi K, Escudier B.
-# presented as Posted Discussion, GU Session, ASCO annual meeting 2012 
+# presented as Posted Discussion, GU Session, ASCO Annual meeting 2012 
 # submitted for publication
 
 # 4: Tumor Growth Rate (TGR) provides useful information for patients enrolled in phase I trials 
 # and yields clear specific drug profiles.
 # Ferté C, et al (manuscript in preparation)
-# presented as Posted Discussion, Developmental Therapeutics Session, ASCO annual meeting 2012 
+# presented as Posted Discussion, Developmental Therapeutics Session, ASCO Annual meeting 2013 
 
 
 ########################################################################
