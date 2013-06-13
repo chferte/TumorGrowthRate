@@ -49,7 +49,8 @@
 # load the data
 #########################################################################################################################
 
-# you are invited to use your own file (MyDataset.txt)
+# you are invited to input your own file (e.g. MyData.txt)
+
 # requirement is a table excel spreadsheet converted into a tabe delimited .txt file
 # must contain the follwoing columns names: "RECIST_BASELINE","RECIST_BEFORE","RECIST_EVAL1","SCANDATE_BASELINE","SCANDATE_BEFORE","SCANDATE_EVAL1"
 # with numeric values for the following columns: "RECIST_BASELINE" "RECIST_BEFORE" "RECIST_EVAL1"
@@ -57,9 +58,9 @@
 
 
 # # for clarity purposes, as example, we point to an example of such .txt file 
-# # this file is available through Synapse 
-# # You'll love it: it's super useful and free !
-# # just create a synapse account online
+# # this file is available through Synapse. 
+# # You'll love it: it's super useful and free ! here is some general information about it: http://sagebase.org/synapse-overview/
+# # just create a synapse account online @ www.synapse.org 
 # # then, install the R client package with the two command lines:
 # source("http://depot.sagebase.org/CRAN.R")
 # pkgInstall("synapseClient")
