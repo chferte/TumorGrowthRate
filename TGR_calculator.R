@@ -2,7 +2,10 @@
 ## Institut Gustave Roussy, Villejuif, France
 ## Asessment of Tumor Growth Rates TGR) in the clinical setting
 ## Performed under the supervision of Serge Koscielny, Bernard Escudier and Jean-Charles Soria
-## With the great help of Antoine Hollebecque, Mariana Fernandez and Brian Bot
+## With the great help of Antoine Hollebecque (Gustave Roussy), Mariana Fernandez (Gustave Roussy) and Brian Bot (Sage Bionetworks, Seattle)
+
+
+
 
 ########################################################################
 # definition of TGR
@@ -86,7 +89,7 @@ myData$TGR.ref <- 100*(exp(3*log(myData$RECIST_BASELINE/myData$RECIST_BEFORE)/(m
 myData$TGR.exp <- 100*(exp(3*log(myData$RECIST_EVAL1/myData$RECIST_BASELINE)/(myData$exp.period))-1)
 
 ############################################################################################################
-# compaire the TGR ref and the TGR exp (Pairwise comparison by wilcoxon ranked signed test)
+# compare the TGR ref and the TGR exp (Pairwise comparison by wilcoxon ranked signed test)
 # (note that this is a pairwise comparison since each patient is used as his/her own control)
 ############################################################################################################
 
@@ -114,4 +117,22 @@ text(x=130,y=-105,'DECREASE in TGR\n "Antitumor activity"',cex=.9,font=4,col="da
 text(x=-90,y=100,'INCREASE in TGR\n "No antitumor activity"',cex=.9,font=4,col="red")
 title("Variation of Tumor Growth Rate (TGR)\nacross the Reference and Experimental periods", font=2)
 
+############################################################################################################
+#
+# see Pubmed for recent publications using TGR:
+#
+############################################################################################################
+
+# 1: Ferte C, Fernandez M, Hollebecque A, Koscielny S, Levy A, Massard C, Balheda
+# R, Bot BM, Gomez Roca C, Dromain C, Ammari S, Soria JC. Tumor Growth Rate (TGR)
+# is an early indicator of anti-tumor drug activity in phase I clinical trials.
+# Clin Cancer Res. 2013 Nov 22. [Epub ahead of print] PubMed PMID: 24240109.
+
+
+# 2: Ferté C, Koscielny S, Albiges L, Rocher L, Soria JC, Iacovelli R, Loriot Y,
+# Fizazi K, Escudier B. Tumor Growth Rate Provides Useful Information to Evaluate
+# Sorafenib and Everolimus Treatment in Metastatic Renal Cell Carcinoma Patients:
+# An Integrated Analysis of the TARGET and RECORD Phase 3 Trial Data. Eur Urol.
+# 2013 Aug 15. doi:pii: S0302-2838(13)00831-2. 10.1016/j.eururo.2013.08.010. [Epub 
+# ahead of print] PubMed PMID: 23993162.
 
