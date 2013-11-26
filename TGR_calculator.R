@@ -2,10 +2,8 @@
 ## Institut Gustave Roussy, Villejuif, France
 ## Asessment of Tumor Growth Rates TGR) in the clinical setting
 ## Performed under the supervision of Serge Koscielny, Bernard Escudier and Jean-Charles Soria
-## With the great help of Antoine Hollebecque (Gustave Roussy), Mariana Fernandez (Gustave Roussy) and Brian Bot (Sage Bionetworks, Seattle)
-
-
-
+## With the great help of Antoine Hollebecque (Gustave Roussy), Mariana Fernandez (Gustave Roussy), Christophe Massard (Gustave Roussy) 
+## and Brian Bot (Sage Bionetworks, Seattle)
 
 ########################################################################
 # definition of TGR
