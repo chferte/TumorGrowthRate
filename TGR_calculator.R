@@ -116,7 +116,7 @@ text(x=-90,y=100,'INCREASE in TGR\n "No antitumor activity"',cex=.9,font=4,col="
 title("Variation of Tumor Growth Rate (TGR)\nacross the Reference and Experimental periods", font=2)
 
 ############################################################################################################
-# see Pubmed for recent publications using TGR:
+# see Pubmed for recent publications using TGR in oncology:
 ############################################################################################################
 
 # 1: Ferte C, Fernandez M, Hollebecque A, Koscielny S, Levy A, Massard C, Balheda
